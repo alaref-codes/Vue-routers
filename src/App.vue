@@ -9,9 +9,7 @@
   <button @click="back" >Back</button>
   <button @click="forward" >Forward</button>
 
-
   <router-view/>
-
 
 </template>
 
@@ -25,11 +23,9 @@ export default {
       this.$router.go(-1);
     },
     forward() {
-      this.$router.go(1);
-      
+      this.$router.go(1);     
     }
   }
-
 }
 </script>
 
