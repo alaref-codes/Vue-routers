@@ -4,8 +4,34 @@
     <router-link to="/about">about</router-link> |
     <router-link to="/jobs">Jobs</router-link>
   </div>
+  
+  <button @click="redirect" >Redirect</button>
+  <button @click="back" >Back</button>
+  <button @click="forward" >Forward</button>
+
+
   <router-view/>
+
+
 </template>
+
+<script>
+export default {
+  methods: {
+    redirect() {
+      this.$router.push({ name: 'Home' })
+    },
+    back() {
+      this.$router.go(-1);
+    },
+    forward() {
+      this.$router.go(1);
+      
+    }
+  }
+
+}
+</script>
 
 <style>
 #app {
@@ -32,6 +58,16 @@
   color: white;
   background-color: #2c3e50;
 
+}
+
+button {
+  padding: 8px;
+  border: 0;
+  margin: 8px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.8em;
+  cursor: pointer;
 }
 
 
